@@ -24,9 +24,11 @@ if __name__ == "__main__":
             line_count += 1
             parts = line.split()
 
-            if len(parts) > 2 and parts[-2].isdigit() and parts[-1].isdigit():
-                status = parts[-2]
+            if len(parts) > 1 and parts[-1].isdigit():
                 total_size += int(parts[-1])
+
+            if len(parts) > 2 and parts[-2].isdigit():
+                status = parts[-2]
                 if status in status_counts:
                     status_counts[status] += 1
 
