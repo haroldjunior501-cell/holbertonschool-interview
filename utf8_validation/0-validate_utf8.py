@@ -7,9 +7,7 @@ def validUTF8(data):
     byte_count = 0
 
     for num in data:
-        if num < 0 or num > 255:
-            return False
-
+        num = num & 0xFF
         if byte_count == 0:
             if num >> 7 == 0:
                 continue
